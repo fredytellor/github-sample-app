@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:github_search_flutter_client_rxdart_example/models/github_search_button.dart';
 
 import '../app/github_search_delegate.dart';
 import '../models/github_user.dart';
@@ -23,16 +24,33 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('GitHub Search'),
       ),
-      body: Center(
-        child: RaisedButton(
-          color: Theme.of(context).primaryColor,
-          child: Text('Search Users',
-              style: Theme.of(context)
-                  .textTheme
-                  .headline6
-                  .copyWith(color: Colors.white)),
-          onPressed: () => _showSearch(context),
-        ),
+      // body: Center(
+      //   child: RaisedButton(
+      //     color: Theme.of(context).primaryColor,
+      //     child: Text(
+      //       'Search Users',
+      //       style: Theme.of(context)
+      //           .textTheme
+      //           .headline6
+      //           .copyWith(color: Colors.white),
+      //     ),
+      //     onPressed: () => _showSearch(context),
+      //   ),
+      // ),
+      body: ListView(
+        physics: BouncingScrollPhysics(),
+        children: [
+          GithubSearchButton(
+            text: 'Search Users',
+            color: Color.fromRGBO(62, 0, 255, 1),
+            onTap: () => _showSearch(context),
+          ),
+          GithubSearchButton(
+            text: 'Search Repos',
+            color: Color.fromRGBO(174, 0, 251, 1),
+            onTap: () => _showSearch(context),
+          ),
+        ],
       ),
     );
   }
