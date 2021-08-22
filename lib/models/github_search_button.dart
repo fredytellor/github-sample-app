@@ -27,8 +27,8 @@ class GithubSearchButton extends StatelessWidget {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              Color.fromRGBO(23, 0, 85, 0.9),
-              Color.fromRGBO(23, 0, 85, 0.4),
+              myColor.withOpacity(0.2),
+              myColor.withOpacity(0.6),
               myColor.withOpacity(0.8),
               myColor,
             ],
@@ -37,8 +37,14 @@ class GithubSearchButton extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               blurRadius: 5,
+              color: Colors.black38,
+              offset: Offset(0, 2),
+              spreadRadius: 1,
+            ),
+            BoxShadow(
+              blurRadius: 5,
               color: myColor.withOpacity(0.5),
-              offset: Offset(1, 3),
+              offset: Offset(2, 5),
               spreadRadius: 1,
             ),
           ],
@@ -50,8 +56,8 @@ class GithubSearchButton extends StatelessWidget {
           style: TextStyle(fontSize: 22, color: Colors.white, shadows: [
             BoxShadow(
               blurRadius: 5,
-              color: Colors.white70, //myColor.withOpacity(0.1),
-              offset: Offset(0, 6),
+              color: Colors.black, //myColor.withOpacity(0.1),
+              offset: Offset(0, 1),
               spreadRadius: 1,
             ),
           ]),

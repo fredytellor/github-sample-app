@@ -40,9 +40,9 @@ class GitHubSearchDelegate extends SearchDelegate<GitHubUser> {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              Colors.white,
-              theme.primaryColor.withOpacity(0.5),
-              theme.primaryColor,
+              Color.fromRGBO(108, 115, 126, 0.3),
+              Color.fromRGBO(108, 115, 126, 0.5),
+              Color.fromRGBO(108, 115, 126, 1),
             ],
           ),
         ),
@@ -98,7 +98,7 @@ class GitHubSearchDelegate extends SearchDelegate<GitHubUser> {
                     BoxShadow(
                       blurRadius: 5,
                       color: Colors.black26,
-                      offset: Offset(0, 0),
+                      offset: Offset(1, 1),
                       spreadRadius: 1,
                     ),
                   ],
@@ -120,7 +120,7 @@ class GitHubSearchDelegate extends SearchDelegate<GitHubUser> {
   @override
   Widget buildResults(BuildContext context) {
     if (query.isEmpty) {
-      return Container();
+      return SizedBox();
     }
     // always search if submitted
     searchService.searchUser(query);
@@ -159,7 +159,9 @@ class GitHubSearchDelegate extends SearchDelegate<GitHubUser> {
             error: (error) => SearchPlaceholder(title: errorMessages[error]),
           );
         } else {
-          return Center(child: CircularProgressIndicator());
+          return Center(
+            child: CircularProgressIndicator(),
+          );
         }
       },
     );

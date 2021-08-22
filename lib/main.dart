@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'GitHub Search Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.indigo,
+        primarySwatch: Colors.blueGrey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: HomePage(),

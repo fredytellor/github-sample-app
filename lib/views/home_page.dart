@@ -24,30 +24,22 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('GitHub Search'),
       ),
-      // body: Center(
-      //   child: RaisedButton(
-      //     color: Theme.of(context).primaryColor,
-      //     child: Text(
-      //       'Search Users',
-      //       style: Theme.of(context)
-      //           .textTheme
-      //           .headline6
-      //           .copyWith(color: Colors.white),
-      //     ),
-      //     onPressed: () => _showSearch(context),
-      //   ),
-      // ),
       body: ListView(
         physics: BouncingScrollPhysics(),
         children: [
           GithubSearchButton(
             text: 'Search Users',
-            color: Color.fromRGBO(62, 0, 255, 1),
+            color: Color.fromRGBO(232, 236, 241, 1),
             onTap: () => _showSearch(context),
           ),
           GithubSearchButton(
             text: 'Search Repos',
-            color: Color.fromRGBO(174, 0, 251, 1),
+            color: Color.fromRGBO(181, 207, 216, 1),
+            onTap: () => _showSearch(context),
+          ),
+          GithubSearchButton(
+            text: 'Search Topics',
+            color: Color.fromRGBO(115, 147, 167, 1),
             onTap: () => _showSearch(context),
           ),
         ],
